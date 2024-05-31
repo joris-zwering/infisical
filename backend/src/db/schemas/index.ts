@@ -37,6 +37,7 @@ export * from "./org-bots";
 export * from "./org-memberships";
 export * from "./org-roles";
 export * from "./organizations";
+export * from "./personal-secrets";
 export * from "./project-bots";
 export * from "./project-environments";
 export * from "./project-keys";

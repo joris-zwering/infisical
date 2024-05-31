@@ -112,6 +112,15 @@
     "og-title": "Manage your secret change management",
     "og-description": "Infisical a simple end-to-end encrypted platform that enables teams to sync and manage their .env files."
   },
+  "user-secets": {
+    "title": "Personal Secrets",
+    "description": "Manage your personal secrets here. These secrets are only visible to you.",
+    "secret_types": {
+      "CREDITCARD": "💳 Credit Card ",
+      "SECURE_NOTE": "📝 Secure Note",
+      "WEB_LOGIN": "🔐 Web Login"
+    }
+  },
   "integrations": {
     "title": "Project Integrations",
     "description": "Manage your integrations of Infisical with third-party services.",
