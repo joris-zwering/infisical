@@ -42,6 +42,7 @@ import { TIntegrationServiceFactory } from "@app/services/integration/integratio
 import { TIntegrationAuthServiceFactory } from "@app/services/integration-auth/integration-auth-service";
 import { TOrgRoleServiceFactory } from "@app/services/org/org-role-service";
 import { TOrgServiceFactory } from "@app/services/org/org-service";
+import { TPersonalSecretsServiceFactory } from "@app/services/personal-secrets/personal-secrets-service";
 import { TProjectServiceFactory } from "@app/services/project/project-service";
 import { TProjectBotServiceFactory } from "@app/services/project-bot/project-bot-service";
 import { TProjectEnvServiceFactory } from "@app/services/project-env/project-env-service";
@@ -142,6 +143,7 @@ declare module "fastify" {
       telemetry: TTelemetryServiceFactory;
       dynamicSecret: TDynamicSecretServiceFactory;
       dynamicSecretLease: TDynamicSecretLeaseServiceFactory;
+      personalSecret: TPersonalSecretsServiceFactory;
       projectUserAdditionalPrivilege: TProjectUserAdditionalPrivilegeServiceFactory;
       identityProjectAdditionalPrivilege: TIdentityProjectAdditionalPrivilegeServiceFactory;
       secretSharing: TSecretSharingServiceFactory;

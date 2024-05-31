@@ -103,6 +103,8 @@ import { orgRoleDALFactory } from "@app/services/org/org-role-dal";
 import { orgRoleServiceFactory } from "@app/services/org/org-role-service";
 import { orgServiceFactory } from "@app/services/org/org-service";
 import { orgMembershipDALFactory } from "@app/services/org-membership/org-membership-dal";
+import { personalSecretsDALFactory } from "@app/services/personal-secrets/personal-secrets-dal";
+import { personalSecretsServiceFactory } from "@app/services/personal-secrets/personal-secrets-service";
 import { projectDALFactory } from "@app/services/project/project-dal";
 import { projectQueueFactory } from "@app/services/project/project-queue";
 import { projectServiceFactory } from "@app/services/project/project-service";
@@ -182,6 +184,8 @@ export const registerRoutes = async (
   const orgRoleDAL = orgRoleDALFactory(db);
   const superAdminDAL = superAdminDALFactory(db);
   const apiKeyDAL = apiKeyDALFactory(db);
+
+  const personalSecretsDAL = personalSecretsDALFactory(db);
 
   const projectDAL = projectDALFactory(db);
   const projectMembershipDAL = projectMembershipDALFactory(db);
@@ -447,6 +451,11 @@ export const registerRoutes = async (
     secretScanningDAL,
     secretScanningQueue
   });
+
+  const personalSecretsService = personalSecretsServiceFactory({
+    personalSecretsDAL
+  });
+
   const projectBotService = projectBotServiceFactory({ permissionService, projectBotDAL, projectDAL });
 
   const projectMembershipService = projectMembershipServiceFactory({
@@ -860,6 +869,7 @@ export const registerRoutes = async (
     scim: scimService,
     secretBlindIndex: secretBlindIndexService,
     telemetry: telemetryService,
+    personalSecret: personalSecretsService,
     projectUserAdditionalPrivilege: projectUserAdditionalPrivilegeService,
     identityProjectAdditionalPrivilege: identityProjectAdditionalPrivilegeService,
     secretSharing: secretSharingService

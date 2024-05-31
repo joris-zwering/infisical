@@ -116,6 +116,9 @@ import {
   TOrgRoles,
   TOrgRolesInsert,
   TOrgRolesUpdate,
+  TPersonalSecrets,
+  TPersonalSecretsInsert,
+  TPersonalSecretsUpdate,
   TProjectBots,
   TProjectBotsInsert,
   TProjectBotsUpdate,
@@ -299,6 +302,11 @@ declare module "knex/types/tables" {
       TProjectEnvironments,
       TProjectEnvironmentsInsert,
       TProjectEnvironmentsUpdate
+    >;
+    [TableName.PersonalSecrets]: Knex.CompositeTableType<
+      TPersonalSecrets,
+      TPersonalSecretsInsert,
+      TPersonalSecretsUpdate
     >;
     [TableName.ProjectBot]: Knex.CompositeTableType<TProjectBots, TProjectBotsInsert, TProjectBotsUpdate>;
     [TableName.ProjectUserMembershipRole]: Knex.CompositeTableType<
